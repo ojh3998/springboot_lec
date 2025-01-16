@@ -1,0 +1,1 @@
+INSERT INTO tbl_board VALUES (NULL, '첫 게시글', '첫 게시글 입니다. 안녕하세요', NOW());
