@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+ <form th:action="@{/modify.do}" method="post" th:object="${board}">
+  <input type="hidden" th:field="*{boardId}" name="boardId"></input>
+  <label for="title">제목</label>
+  <input type="text" id="title" name="title" th:field="*{title}"></input>
+  <br/>
+  <label for="contents">내용</label>
+  <textarea id="contents" name="contents" th:text="*{contents}"></textarea>
+  <br/>
+  <span th:text="|작성일시 ${#dates.format(board.createDt, 'yyyy. MM. dd a hh:mm:ss')}|"></span>
+  <button type="submit">수정</button>
+  
+ </form> 
+
+</body>
+</html>
